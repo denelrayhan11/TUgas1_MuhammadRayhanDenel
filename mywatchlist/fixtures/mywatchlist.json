@@ -1,0 +1,121 @@
+[
+    {
+        "model": "mywatchlist.ListFilm",
+        "pk": 1,
+        "fields": {
+            "film_watched": "Sudah",
+            "film_tittle": "Interstellar",
+            "film_rating": "8.6/10",
+            "film_release_date": "Indonesia, 6 November 2014",
+            "film_review": "Filmnya bagus, mengenai penelitian menuju luar angkasa, dan eksplorasi terhadap lubang cacing, dan di film ini terdapat kesan kekeluargaan"
+        }
+    },
+
+    {
+        "model": "mywatchlist.ListFilm",
+        "pk": 2,
+        "fields": {
+            "film_watched": "Belum",
+            "film_tittle": "Miracle in cell no.7 Indonesia",
+            "film_rating": "-/10",
+            "film_release_date": "Indonesia, 8 September 2022",
+            "film_review": "Belum ada review"
+        }
+    },
+
+    {
+        "model": "mywatchlist.ListFilm",
+        "pk": 3,
+        "fields": {
+            "film_watched": "Sudah",
+            "film_tittle": "Avanger",
+            "film_rating": "9.8/10",
+            "film_release_date": "Indonesia, 25 April 2015",
+            "film_review": "Filmnya sangat bagus, Film tentang superhero yang berjuang mempertahankan keamanan dan keselamatan bumi dan penduduknya"
+        }
+    },
+
+    {
+        "model": "mywatchlist.ListFilm",
+        "pk": 4,
+        "fields": {
+            "film_watched": "Belum",
+            "film_tittle": "Negeri 5 menara",
+            "film_rating": "-/10",
+            "film_release_date": "Indonesia, 8 September 2022",
+            "film_review": "Belum ada review"
+        }
+    },
+
+    {
+        "model": "mywatchlist.ListFilm",
+        "pk": 5,
+        "fields": {
+            "film_watched": "Sudah",
+            "film_tittle": "Ngeri ngeri sedap",
+            "film_rating": "8/10",
+            "film_release_date": "Indonesia, 2 Juni 2022",
+            "film_review": "Filmnya sangat bagus, membuat penonton menangis, menceritakan tentang kebudayaan dari keluarga batak dan menambah wawasan tentang Indonesia"
+        }
+    },
+
+    {
+        "model": "mywatchlist.ListFilm",
+        "pk": 6,
+        "fields": {
+            "film_watched": "Belum",
+            "film_tittle": "Top Gun Maverick",
+            "film_rating": "-/10",
+            "film_release_date": "Indonesia, 27 Mei 2022",
+            "film_review": "Belum ada Review"
+        }
+    },
+
+    {
+        "model": "mywatchlist.ListFilm",
+        "pk": 7,
+        "fields": {
+            "film_watched": "Sudah",
+            "film_tittle": "Spider-Man No Way Home",
+            "film_rating": "9/10",
+            "film_release_date": "Indonesia, 15 Desember 2021",
+            "film_review": "Filmnya sangat bagus, Film mengenai superhero, Spiderman kembali lagi bertemu dengan penjahat dari universe lain"
+        }
+    },
+
+    {
+        "model": "mywatchlist.ListFilm",
+        "pk": 8,
+        "fields": {
+            "film_watched": "Belum",
+            "film_tittle": "Midsommar",
+            "film_rating": "-/10",
+            "film_release_date": "Indonesia, 8 September 2022",
+            "film_review": "Belum ada Review"
+        }
+    },
+
+    {
+        "model": "mywatchlist.ListFilm",
+        "pk": 9,
+        "fields": {
+            "film_watched": "Sudah",
+            "film_tittle": "Pengabdi Setan 2",
+            "film_rating": "8.5/10",
+            "film_release_date": "Indonesia, 4 Agustus 2022",
+            "film_review": "Filmnya sangat bagus, film horror yang penyampaian kesan seramnya sampai kepada para penonton, dan memberikan kesan yang mengerikan"
+        }
+    },
+
+    {
+        "model": "mywatchlist.ListFilm",
+        "pk": 10,
+        "fields": {
+            "film_watched": "Sudah",
+            "film_tittle": "Counjuring 2",
+            "film_rating": "6/10",
+            "film_release_date": "Indonesia, 10 Juni 2016",
+            "film_review": "Filmnya bagus, kesan horrornya dapat, namun terlalu dibuat-buat dan kurang terasa nyata"
+        }
+    }
+]
