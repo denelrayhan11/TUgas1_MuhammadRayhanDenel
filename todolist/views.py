@@ -33,6 +33,7 @@ def register(request):
     context = {'form':form}
     return render(request, 'register.html', context)
 
+@login_required(login_url='/todolist/login/')
 def create_task(request):
     context = {}
     if request.method == "POST":
