@@ -13,10 +13,22 @@ from django.urls import reverse
 @login_required(login_url='/todolist/login/')
 def show_todolist(request):
     data_todolist = Task.objects.filter(user = request.user)
+    sudah_selesai = 0
+    belum_selesai = 0
+    for i in data_todolist :
+        if i.finish == True:
+            sudah_selesai+=1
+        else:
+            belum_selesai+=1
+    if sudah_selesai>belum_selesai:
+        info = "Selamat Kamu Rajin"
+    else:
+        info = "Ayo lebih giat lagi"
     context = {
         'task_list' : data_todolist,
         'nama' : request.user.username,
-        'last_login' : request.COOKIES['last_login']
+        'last_login' : request.COOKIES['last_login'],
+        'info' : info,
     }
     return render(request, "todolist.html", context)
 
