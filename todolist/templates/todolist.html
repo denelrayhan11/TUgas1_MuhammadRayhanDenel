@@ -7,21 +7,31 @@
 
 <body>
     <link rel="stylesheet" href="{% static 'css/bootstrap-todolist.css' %}"/>
+
     <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand">To-Do List</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-              <a class="nav-link active" aria-current="page" href="{% url 'todolist:create-task' %}">Create Task</a>
-              <a class="nav-link" href="{% url 'todolist:register' %}">Register</a>
-              <a class="nav-link" href="{% url 'todolist:logout' %}">Log Out</a>
-            </div>
-          </div>
+      <div class="container-fluid">
+        <a class="navbar-brand">To Do List</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Menu
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{% url 'todolist:create-task' %}">Create Task</a></li>
+                <li><a class="dropdown-item" href="{% url 'todolist:register' %}">Register</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="{% url 'todolist:logout' %}">Log Out</a></li>
+              </ul>
+            </li>
+          </ul>
         </div>
-      </nav>
+      </div>
+    </nav>
+    
             <div class="row row-cols-md-3 mx-auto" style="width: 100%;">
       
                 {% for task in task_list %}
@@ -41,8 +51,8 @@
                               </p>
               
                               <p style="text-align: center;">
-                                  <a style="width: 7rem;" class="btn login_btn btn btn-primary form-control" href="{% url 'todolist:progres' task.pk %}">Progres</a>
-                                  <a style="width: 7rem;" class="btn login_btn btn btn-danger form-control lg" href="{% url 'todolist:delete_task' task.pk %}">Hapus</a>
+                                  <a style="width: 7rem;" class="btn login_btn btn-outline-primary form-control" href="{% url 'todolist:progres' task.pk %}">Progres</a>
+                                  <a style="width: 7rem;" class="btn login_btn btn-outline-danger form-control lg" href="{% url 'todolist:delete_task' task.pk %}">Hapus</a>
                               </p>
                           </div>
                       </div>
