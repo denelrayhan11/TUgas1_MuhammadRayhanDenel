@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load static %}
+
 
 {% block meta %}
 <title>Create Task</title>
@@ -6,12 +8,48 @@
 
 {% block content %}  
 
+<div class="container">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-create-task.css' %}"/>
+    <form method="POST" action="">
+    
+        {% csrf_token %}
+    <div class="screen">
+        <div class="screen__content">
+            <form class="login">
+				<div class="login__field">
+					<i class="login__icon fas fa-user"></i>
+					<input input type="text" name="todo" placeholder="TO DO" class="form-control">
+				</div>
+				<div class="login__field">
+					<i class="login__icon fas fa-lock"></i>
+					<input input type="text" name="description" placeholder="DESCRIPTION" class="form-control">
+				</div>
+				<button class="button login__submit">
+					<span input class="btn login_btn" type="submit" value="Submit" href="{% url 'todolist:show_todolist' %}">Create Task</span>
+					<i class="button__icon fas fa-chevron-right"></i>
+				</button>				
+			</form>
+			<!-- <div class="social-login">
+				<h3>log in via</h3>
+				<div class="social-icons">
+					<a href="#" class="social-login__icon fab fa-instagram"></a>
+					<a href="#" class="social-login__icon fab fa-facebook"></a>
+					<a href="#" class="social-login__icon fab fa-twitter"></a>
+				</div>
+			</div> -->
+		</div>
+		<div class="screen__background">
+			<span class="screen__background__shape screen__background__shape4"></span>
+			<span class="screen__background__shape screen__background__shape3"></span>		
+			<span class="screen__background__shape screen__background__shape2"></span>
+			<span class="screen__background__shape screen__background__shape1"></span>
+		</div>		
+	</div>
+</div>
 
-<form method="POST" action="">
 
-    {% csrf_token %}
 
-    <table>
+    <!-- <table>
         <tr>
             <td>To do: </td>
             <td><input type="text" name="todo" placeholder="TO DO" class="form-control"></td>
@@ -26,7 +64,7 @@
             <td></td>
             <td><input class="btn login_btn" type="submit" value="Submit" href="{% url 'todolist:show_todolist' %}"></td>
         </tr>
-    </table>
+    </table> -->
         
 </form>
 

@@ -1,40 +1,55 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-
 {% csrf_token %}
 
-<h2>TUGAS 4 PBP </h2>
 
-<h3>Nama: </h3>
-<b>{{nama}}</b>
+<body>
+    <link rel="stylesheet" href="{% static 'css/bootstrap-todolist.css' %}"/>
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">To-Do List</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="{% url 'todolist:create-task' %}">Create Task</a>
+              <a class="nav-link" href="{% url 'todolist:register' %}">Register</a>
+              <a class="nav-link" href="{% url 'todolist:logout' %}">Log Out</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+            <div class="row row-cols-md-3 mx-auto" style="width: 100%;">
+      
+                {% for task in task_list %}
+                  <div class="col">
+                      <div class="card border-primary mb-3">
+                          <div class="card-body">
+                              
+                              <h3 class="card-title" style="padding-bottom: 5px">{{task.title}}</h3>
+                              <h6 class="card-subtitle">{{task.date}}</h6>
+                              <p class="card-text">{{task.description}}</p>
+                              <p class="card-text">
+                                {% if task.finish == False %}
+                                Tugas Belum Selesai
+                                {% else %}
+                                Tugas Selesai
+                                {% endif %}
+                              </p>
+              
+                              <p style="text-align: center;">
+                                  <a style="width: 7rem;" class="btn login_btn btn btn-primary form-control" href="{% url 'todolist:progres' task.pk %}">Progres</a>
+                                  <a style="width: 7rem;" class="btn login_btn btn btn-danger form-control lg" href="{% url 'todolist:delete_task' task.pk %}">Hapus</a>
+                              </p>
+                          </div>
+                      </div>
+                  </div>
+                {% endfor %}
+              </div>
+</body>
 
-<table>
-    <tr>
-    <th>Tanggal</th>
-    <th>Judul</th>
-    <th>Deskripsi</th>
-    <th>Progres</th>
-    <th>Lanjutkan/Hapus</th>
-    </tr>
-    {% comment %} Tambahkan data di bawah baris ini {% endcomment %}
-{% for task in task_list %}
-    <tr>
-        <th>{{task.date}}</th>
-        <th>{{task.title}}</th>
-        <th>{{task.description}}</th>
-        {% if task.finish == False %}
-        <th>Tugas Belum Selesai</th>
-        {% else %}
-        <th>Tugas Selesai</th>
-        {% endif %}
-        <th><button><a href="{% url 'todolist:progres' task.pk %}">Progres</a></button></th>
-        <th><button><a href="{% url 'todolist:delete_task' task.pk %}">Hapus</a></button></th>
-    </tr>
-{% endfor %}
-</table>
-<h5>Sesi terakhir login: {{ last_login }}</h5>
-<button><a href="{% url 'todolist:create-task' %}">Tambah Task Baru</a></button>
-<button><a href="{% url 'todolist:logout' %}">Logout</a></button>
 
 {% endblock content %}
