@@ -8,7 +8,8 @@
 }
 
 body {
-	background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));		
+	background: rgb(255,0,139);
+background: linear-gradient(90deg, rgba(255,0,139,1) 0%, rgba(0,237,255,1) 100%);		
 }
 
 .container {
@@ -19,7 +20,8 @@ body {
 }
 
 .screen {		
-	background: linear-gradient(90deg, #8b7dfa, #3b3769);		
+	background: rgb(255,0,139);
+background: linear-gradient(90deg, rgba(255,0,139,1) 0%, rgba(0,237,255,1) 100%);;		
 	position: relative;	
 	height: 600px;
 	width: 360px;	
