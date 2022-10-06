@@ -5,19 +5,24 @@
 {% csrf_token %}
 
 
-<body>
+<body style="background: rgb(108,0,129);
+background: linear-gradient(90deg, rgba(108,0,129,1) 0%, rgba(63,28,112,1) 40%, rgba(0,100,255,1) 100%);">
     <link rel="stylesheet" href="{% static 'css/bootstrap-todolist.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
 
-    <nav class="navbar navbar-expand-lg bg-light">
+    <nav class="navbar navbar-expand-lg bg-light" style="background: rgb(108,0,129);
+    background: linear-gradient(90deg, rgba(108,0,129,1) 0%, rgba(63,28,112,1) 40%, rgba(0,100,255,1) 100%);">
       <div class="container-fluid">
-        <a class="navbar-brand">To Do List</a>
+        <a class="navbar-brand" style="color:antiquewhite;">To Do List</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 ml-auto">
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" style="color:antiquewhite;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Menu
               </a>
               <ul class="dropdown-menu">
@@ -32,7 +37,7 @@
       </div>
     </nav>
     <br></br>
-    <h1>{{ info }}</h1>
+    <h1 style="color:antiquewhite">{{ info }}</h1>
     <br></br>
 
             <div class="row row-cols-md-3 mx-auto" style="width: 100%;">
