@@ -45,13 +45,13 @@ background: linear-gradient(90deg, rgba(255,0,139,1) 0%, rgba(0,237,255,1) 100%)
                 {% for task in task_list %}
                   <div class="col">
                       <div class="card border-primary mb-3">
-                          <div class="card-body" style="background: rgb(173,255,0);
-                          background: linear-gradient(90deg, rgba(173,255,0,1) 0%, rgba(0,255,200,1) 100%);">
+                          <div class="card-body" style= "background: rgb(0,255,221);
+                          background: linear-gradient(315deg, rgba(0,255,221,1) 0%, rgba(32,67,145,1) 50%, rgba(228,23,255,1) 100%);">
                               
-                              <h3 class="card-title" style="padding-bottom: 5px">{{task.title}}</h3>
-                              <h6 class="card-subtitle">{{task.date}}</h6>
-                              <p class="card-text">{{task.description}}</p>
-                              <p class="card-text">
+                              <h3 class="card-title" style="padding-bottom: 5px; color: antiquewhite;">{{task.title}}</h3>
+                              <h6 class="card-subtitle" style="color: antiquewhite;">{{task.date}}</h6>
+                              <p class="card-text" style="color: antiquewhite;">{{task.description}}</p>
+                              <p class="card-text" style="color: antiquewhite;">
                                 {% if task.finish == False %}
                                 Tugas Belum Selesai
                                 {% else %}
@@ -60,8 +60,8 @@ background: linear-gradient(90deg, rgba(255,0,139,1) 0%, rgba(0,237,255,1) 100%)
                               </p>
               
                               <p style="text-align: center;">
-                                  <a style="width: 7rem;" class="btn login_btn btn-outline-primary form-control" href="{% url 'todolist:progres' task.pk %}">Progres</a>
-                                  <a style="width: 7rem;" class="btn login_btn btn-outline-danger form-control lg" href="{% url 'todolist:delete_task' task.pk %}">Hapus</a>
+                                  <a style="width: 7rem;" class="btn login_btn btn-outline-light form-control" href="{% url 'todolist:progres' task.pk %}">Progres</a>
+                                  <a style="width: 7rem;" class="btn login_btn btn-outline-dark form-control lg" href="{% url 'todolist:delete_task' task.pk %}">Hapus</a>
                               </p>
                           </div>
                       </div>
