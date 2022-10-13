@@ -1,7 +1,7 @@
 # Muhammad Rayhan Denel
 # 2106752161
 
-# Penjelasan Tugas 5
+# Penjelasan Tugas 6
 ## Jelaskan perbedaan antara asynchronous programming dengan synchronous programming
 
 Jawab:
