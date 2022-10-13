@@ -15,13 +15,13 @@ Synchronus programming berarti program menjalankan tugas / task secara berurutan
 
 Jawab:
 
-Paradigma Event-Driven Programming merupakan suatu momen dimana program dieksekusi berdasarkan event yang terjadi. Paradigma ini sangat bergantung pada event, sehingga flow dari program dapat dijalankan seperti konsep asynchronus programming yang tidak sequential. Salah satu contoh penerapannya pada tugas kali ini adalah ketika button add pada add task diklik, program akan selalu menjalankan suatu fungsi untuk membuat task baru ketika terdapat event yaitu click document.getElementById("addtaskbutton").onclick = addTodolistModal
+paradigma pemrograman yang alur programnya ditentukan oleh suatu event / peristiwa yang merupakan keluaran atau tindakan pengguna atau bisa berupa pesan dari program lainnya. penerapan pada tugas ini yaitu saat pengguna melakukan perintah dengan mengklik tambah task baru, maka pop up task baru langsung keluar saat di klik/saat terjadi event.
 
 # Jelaskan penerapan asynchronous programming pada AJAX
 
 Jawab:
 
-Penerapan asynchronus programming pada AJAX contohnya ketika sebuah event terjadi maka event tersebut akan menjalankan suatu fungsionalitas AJAX. Pada tugas 6 ini, penerapannya terjadi ketika user melakukan klik button add pada form untuk membuat task baru, makan AJAX POST akan dilakukan dan mengirim data ke server. Kemudian, setelah server berhasil mengolah data tersebut, callback function akan dijalankan sehingga dapat menangkap data dan mengirimkannya ke server tanpa harus melakukan reload pada website. Hal tersebut tentu akan membuat user experience dari website jauh lebih baik.
+Pada Javascript, Asynchronous JavaScript and XMLHTTP atau biasa disebut AJAX merupakan salah satu konsep yang menerapkan metode asynchronous dalam menjalankan pekerjaannya. Biasa nya AJAX digunakan untuk melakukan permintaan data (request) dan menangani sebuah tanggapan (handling response), baik response dalam bentuk XML, Javascript ataupun JSON dari sebuah Rest API.
 
 # Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas
 
