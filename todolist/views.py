@@ -9,6 +9,8 @@ from todolist.models import Task
 import datetime
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from django.http import HttpResponse
+from django.core import serializers
 
 @login_required(login_url='/todolist/login/')
 def show_todolist(request):
@@ -65,7 +67,7 @@ def progres(request, pk):
     return redirect('todolist:show_todolist')
 
 def delete_task(request, pk):
-    task_delete = Task.objects.filter(pk=pk)
+    task_delete = Task.objects.filter(id=pk)
     task_delete.delete()
     return redirect('todolist:show_todolist')
 
@@ -90,5 +92,30 @@ def logout_user(request):
     response.delete_cookie('last_login')
     return response
 
+@login_required(login_url='/todolist/login/')
+def todolist_ajax(request):
+    ajax_todolist = Task.objects.filter(user=request.user)
+    context = {
+    'ajax_todolist' : ajax_todolist,
+    'username' :  request.user.username,
+    'last_login': request.COOKIES['last_login'],
+    }
+    return render(request, "todolist_ajax.html", context)
 
+# AJAX GET
+def get_todolist_json(request):
+    data_ajax = Task.objects.filter(user=request.user)
+
+    return HttpResponse(serializers.serialize("json", data_ajax), content_type="application/json")
+
+# ADD TASK MODAL
+def add(request):
+    if request.method == 'POST':
+        title = request.POST.get('title')
+        description = request.POST.get('description')
+        date = datetime.datetime.now()
+        user = request.user
+        Task.objects.create(title=title, description=description, date=date, user=user)
+         
+        return HttpResponse(b"CREATED", status=201)
 # Create your views here.
