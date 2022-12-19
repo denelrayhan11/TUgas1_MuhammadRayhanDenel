@@ -11,6 +11,7 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.http import HttpResponse
 from django.core import serializers
+from django.http import JsonResponse
 
 @login_required(login_url='/todolist/login/')
 def show_todolist(request):
@@ -56,6 +57,7 @@ def create_task(request):
         return redirect('todolist:show_todolist')
     return render(request, "create-task.html",context)
 
+@login_required(login_url='/todolist/login/')
 def progres(request, pk):
     task_progres = Task.objects.get(id=pk)
     if (task_progres.finish == False):
@@ -66,10 +68,11 @@ def progres(request, pk):
 
     return redirect('todolist:show_todolist')
 
+@login_required(login_url='/todolist/login/')
 def delete_task(request, pk):
-    task_delete = Task.objects.filter(id=pk)
+    task_delete = Task.objects.filter(pk=pk)
     task_delete.delete()
-    return redirect('todolist:show_todolist')
+    return JsonResponse({'message': 'success'})
 
 def login_user(request):
     if request.method == 'POST':

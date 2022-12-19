@@ -1,3 +1,1 @@
-release: sh -c 'python manage.py migrate && python manage.py loaddata initial_catalog_data.json'
-web: gunicorn project_django.wsgi --log-file -
-release: sh -c 'python manage.py migrate && python manage.py loaddata mywatchlist.json'
+web: python manage.py migrate && gunicorn project_django.wsgi
